@@ -10,21 +10,19 @@ Type Alias এবং Type Interface মূলত কোন ডাটার ধ�
 - এতে কোডের readability বাড়ে।  
 - উদাহরণ:
 
-```ts
+```
 type ID = string | number;
 type Point = [number, number];
 type Callback = (data: string) => void;
-Type Interface:
 ```
+Type Interface:
 
 একই ধরনের কাজ করে, তবে এটি শুধু object, class, বা function এর ধরন নির্ধারণের জন্য ব্যবহার করা হয়।
 
 Interface declaration merging এবং extends সমর্থন করে।
 
 উদাহরণ:
-```ts
-ts
-Copy code
+```
 interface Person {
   name: string;
   age: number;
@@ -50,9 +48,7 @@ Union Types (|):
 Union types শুধু variable নয়, function parameter, return type বা array element এর জন্যও ব্যবহার করা যেতে পারে।
 
 উদাহরণ:
-```ts
-ts
-Copy code
+```
 type ID = string | number;
 
 let userId: ID;
@@ -71,9 +67,7 @@ Intersection type কোন object এর ভিতরে must have condition �
 এটি মূলত objects এর জন্য বেশি ব্যবহৃত হলেও, function বা অন্যান্য types এর জন্যও ব্যবহার করা যেতে পারে।
 
 উদাহরণ:
-```ts
-ts
-Copy code
+```
 type Person = { name: string; age: number };
 type Employee = { role: string };
 
