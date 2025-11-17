@@ -15,13 +15,14 @@ type ID = string | number;
 type Point = [number, number];
 type Callback = (data: string) => void;
 Type Interface:
+```
 
 একই ধরনের কাজ করে, তবে এটি শুধু object, class, বা function এর ধরন নির্ধারণের জন্য ব্যবহার করা হয়।
 
 Interface declaration merging এবং extends সমর্থন করে।
 
 উদাহরণ:
-
+```ts
 ts
 Copy code
 interface Person {
@@ -32,6 +33,11 @@ interface Person {
 interface Employee extends Person {
   role: string;
 }
+
+
+```
+
+
 ৫. Union Type এবং Intersection Type এর ব্যবহার
 Provide an example of using union and intersection types in TypeScript.
 
@@ -44,7 +50,7 @@ Union Types (|):
 Union types শুধু variable নয়, function parameter, return type বা array element এর জন্যও ব্যবহার করা যেতে পারে।
 
 উদাহরণ:
-
+```ts
 ts
 Copy code
 type ID = string | number;
@@ -53,6 +59,9 @@ let userId: ID;
 userId = 123;    // সঠিক ধরন
 userId = '123';  // সঠিক ধরন
 // userId = true; // ভুল কারণ এটি boolean
+
+```
+
 অর্থ: এই ID type এর variable বা parameter string type এর value নিতে পারে নাহলে number type এর।
 
 Intersection Type (&):
@@ -62,7 +71,7 @@ Intersection type কোন object এর ভিতরে must have condition �
 এটি মূলত objects এর জন্য বেশি ব্যবহৃত হলেও, function বা অন্যান্য types এর জন্যও ব্যবহার করা যেতে পারে।
 
 উদাহরণ:
-
+```ts
 ts
 Copy code
 type Person = { name: string; age: number };
@@ -73,4 +82,6 @@ const staff: Person & Employee = {
   age: 25,
   role: 'Developer'
 };
+
+```
 যেহেতু staff এর type হলো Person এবং Employee এর সমষ্টি, তাই staff এর property গুলোর মধ্যে Person এবং Employee এর সকল type থাকতে হবে।
