@@ -15,9 +15,9 @@ type ID = string | number;
 type Point = [number, number];
 type Callback = (data: string) => void;
 ```
-Type Interface:
+**Type Interface:**
 
-একই ধরনের কাজ করে, তবে এটি শুধু object, class, বা function এর ধরন নির্ধারণের জন্য ব্যবহার করা হয়।
+- একই ধরনের কাজ করে, তবে এটি শুধু object, class, বা function এর ধরন নির্ধারণের জন্য ব্যবহার করা হয়।
 
 Interface declaration merging এবং extends সমর্থন করে।
 
@@ -39,15 +39,15 @@ interface Employee extends Person {
 ## ৫. Union Type এবং Intersection Type এর ব্যবহার
 **Provide an example of using union and intersection types in TypeScript.**
 
-Union type এবং Intersection type মূলত কোন variable অথবা parameter কে কিছু privilege অথবা rules নির্ধারণ করে দেয়।
+- Union type এবং Intersection type মূলত কোন variable অথবা parameter কে কিছু privilege অথবা rules নির্ধারণ করে দেয়।
 
-Union Types (|):
+**Union Types (|):**
 
-এই type কোন variable বা parameter কে multiple type গ্রহণের সুযোগ দেয়।
+- এই type কোন variable বা parameter কে multiple type গ্রহণের সুযোগ দেয়।
 
-Union types শুধু variable নয়, function parameter, return type বা array element এর জন্যও ব্যবহার করা যেতে পারে।
+- Union types শুধু variable নয়, function parameter, return type বা array element এর জন্যও ব্যবহার করা যেতে পারে।
 
-উদাহরণ:
+- উদাহরণ:
 ```
 type ID = string | number;
 
@@ -60,13 +60,13 @@ userId = '123';  // সঠিক ধরন
 
 অর্থ: এই ID type এর variable বা parameter string type এর value নিতে পারে নাহলে number type এর।
 
-Intersection Type (&):
+**Intersection Type (&):**
 
-Intersection type কোন object এর ভিতরে must have condition প্রয়োগ করে।
+- Intersection type কোন object এর ভিতরে must have condition প্রয়োগ করে।
 
-এটি মূলত objects এর জন্য বেশি ব্যবহৃত হলেও, function বা অন্যান্য types এর জন্যও ব্যবহার করা যেতে পারে।
+- এটি মূলত objects এর জন্য বেশি ব্যবহৃত হলেও, function বা অন্যান্য types এর জন্যও ব্যবহার করা যেতে পারে।
 
-উদাহরণ:
+- উদাহরণ:
 ```
 type Person = { name: string; age: number };
 type Employee = { role: string };
@@ -78,4 +78,4 @@ const staff: Person & Employee = {
 };
 
 ```
-যেহেতু staff এর type হলো Person এবং Employee এর সমষ্টি, তাই staff এর property গুলোর মধ্যে Person এবং Employee এর সকল type থাকতে হবে।
+**যেহেতু staff এর type হলো Person এবং Employee এর সমষ্টি, তাই staff এর property গুলোর মধ্যে Person এবং Employee এর সকল type থাকতে হবে।**
