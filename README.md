@@ -8,22 +8,45 @@ Type Alias এবং Type Interface মূলত কোন ডাটার ধ�
 **Type Alias:**  
 - যেকোন ধরনের primitive type, object, class, tuple, বা function এর ধরন নির্ধারণের জন্য ব্যবহার করা হয়।  
 - এতে কোডের readability বাড়ে।  
-
-**Type Interface:**  
-- একই ধরনের কাজ করে, তবে এটি শুধু object, class, বা function এর ধরন নির্ধারণের জন্য ব্যবহার করা হয়।  
-
----
-
-## ৫. Union Type এবং Intersection Type এর ব্যবহার
-**Provide an example of using union and intersection types in TypeScript.**
-
-Union type এবং Intersection type মূলত কোন variable অথবা parameter কে কিছু privilege অথবা rules নির্ধারণ করে দেয়।  
-
-**Union Types (`|`):**  
-- এই type কোন variable বা parameter কে multiple type গ্রহণের সুযোগ দেয়।  
 - উদাহরণ:
 
 ```ts
+type ID = string | number;
+type Point = [number, number];
+type Callback = (data: string) => void;
+Type Interface:
+
+একই ধরনের কাজ করে, তবে এটি শুধু object, class, বা function এর ধরন নির্ধারণের জন্য ব্যবহার করা হয়।
+
+Interface declaration merging এবং extends সমর্থন করে।
+
+উদাহরণ:
+
+ts
+Copy code
+interface Person {
+  name: string;
+  age: number;
+}
+
+interface Employee extends Person {
+  role: string;
+}
+৫. Union Type এবং Intersection Type এর ব্যবহার
+Provide an example of using union and intersection types in TypeScript.
+
+Union type এবং Intersection type মূলত কোন variable অথবা parameter কে কিছু privilege অথবা rules নির্ধারণ করে দেয়।
+
+Union Types (|):
+
+এই type কোন variable বা parameter কে multiple type গ্রহণের সুযোগ দেয়।
+
+Union types শুধু variable নয়, function parameter, return type বা array element এর জন্যও ব্যবহার করা যেতে পারে।
+
+উদাহরণ:
+
+ts
+Copy code
 type ID = string | number;
 
 let userId: ID;
@@ -35,6 +58,8 @@ userId = '123';  // সঠিক ধরন
 Intersection Type (&):
 
 Intersection type কোন object এর ভিতরে must have condition প্রয়োগ করে।
+
+এটি মূলত objects এর জন্য বেশি ব্যবহৃত হলেও, function বা অন্যান্য types এর জন্যও ব্যবহার করা যেতে পারে।
 
 উদাহরণ:
 
@@ -49,5 +74,3 @@ const staff: Person & Employee = {
   role: 'Developer'
 };
 যেহেতু staff এর type হলো Person এবং Employee এর সমষ্টি, তাই staff এর property গুলোর মধ্যে Person এবং Employee এর সকল type থাকতে হবে।
-
-Copy code
