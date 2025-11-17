@@ -36,8 +36,8 @@ interface Employee extends Person {
 ```
 
 
-৫. Union Type এবং Intersection Type এর ব্যবহার
-Provide an example of using union and intersection types in TypeScript.
+## ৫. Union Type এবং Intersection Type এর ব্যবহার
+**Provide an example of using union and intersection types in TypeScript.**
 
 Union type এবং Intersection type মূলত কোন variable অথবা parameter কে কিছু privilege অথবা rules নির্ধারণ করে দেয়।
 
